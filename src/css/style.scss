@@ -1,0 +1,56 @@
+@import url('mixins.scss');
+@import url('prime.scss');
+
+html {
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    font-family: Avenir, Helvetica, Arial, sans-serif !important;
+    color: #000000;
+    background-color: #ffffff;
+    height: 100%;
+}
+
+:focus {
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    height: 100%
+}
+
+.red {
+    color: red;
+}
+
+.btn {    
+    text-transform: uppercase;
+    border-radius: 0;
+
+    &.btn-primary {
+        background: #1161ee;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+// Complex scenario CSS
+
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+    box-shadow: none;
+}

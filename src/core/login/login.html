@@ -1,0 +1,71 @@
+<section class="login-wrapper">
+  <div class="logo">
+    <span>Infinity</span>
+  </div>
+  <div class="login-content">
+    <div class="login-inner-wrapper">
+      <div class="tab-view">
+        <TabView @tab-click="tabClick($event)" v-model:activeIndex="activeIndex">
+          <TabPanel header="SIGN IN">
+            <span class="p-float-label">
+              <InputText id="username" type="text" v-model="username" />
+              <label for="username">Username<sup class="red">*</sup></label>
+            </span>
+            <span class="p-float-label">
+              <InputText id="password" type="password" v-model="password" />
+              <label for="password">Password<sup class="red">*</sup></label>
+            </span>
+            <div class="checkbox">
+              <div class="p-field-checkbox">
+                <Checkbox id="binary" v-model="checked" :binary="true" />
+                <label for="binary">Keep me Signed In</label>
+              </div>
+            </div>
+          </TabPanel>
+          <TabPanel header="SIGN UP">
+            <span class="p-float-label">
+              <InputText id="username" type="text" v-model="newusername" />
+              <label for="username">Username<sup class="red">*</sup></label>
+            </span>
+            <span class="p-float-label">
+              <InputText id="fullname" type="text" v-model="newfullname" />
+              <label for="fullname">Full Name<sup class="red">*</sup></label>
+            </span>
+            <span class="p-float-label">
+              <InputText id="password" type="password" v-model="newpassword" />
+              <label for="password">Password<sup class="red">*</sup></label>
+              <span class="password-instruction" @click="messageShow()">?</span>
+            </span>
+            <span class="p-float-label">
+              <InputText id="repeatpassword" type="password" v-model="newrepeatpsw" />
+              <label for="repeatpassword">Repeat Password<sup class="red">*</sup></label>
+            </span>
+            <span class="p-float-label">
+              <InputText id="email" type="email" v-model="email" />
+              <label for="email">Email Address<sup class="red">*</sup></label>
+            </span>
+          </TabPanel>
+        </TabView>
+      </div>
+      <div class="submit">
+        <button type="button" class="btn btn-primary">{{loginButton}}</button>
+      </div>
+      <div class="mt-2 forget-psw" @click='changeScreen()'>
+        <span>{{loginQue}}?</span>
+      </div>
+    </div>
+  </div>
+  <div class="pass-info" v-if="messageHide">
+    <Message severity="info" @close="close()">
+      <div>
+        <p>Pick a Password</p>
+        <ul>
+          <li>At least one lowercase</li>
+          <li>At least one uppercase</li>
+          <li>At least one numeric</li>
+          <li>Minimum 8 characters</li>
+        </ul>
+      </div>
+    </Message>
+  </div>
+</section>
