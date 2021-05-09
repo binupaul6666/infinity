@@ -1,5 +1,6 @@
-@import url('mixins.scss');
-@import url('prime.scss');
+@import url("commonPrime.scss");
+@import url("mixins.scss");
+@import url("prime.scss");
 
 html {
     height: 100%;
@@ -28,14 +29,14 @@ ol {
 }
 
 #app {
-    height: 100%
+    height: 100%;
 }
 
 .red {
     color: red;
 }
 
-.btn {    
+.btn {
     text-transform: uppercase;
     border-radius: 0;
 

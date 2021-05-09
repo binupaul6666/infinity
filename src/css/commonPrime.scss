@@ -1,0 +1,34 @@
+.p-toast {
+    width: auto;
+    .p-toast-message {
+        margin-bottom: 6px;
+        box-shadow: none;
+        border-radius: 0;
+        &.p-toast-message-error,
+        &.p-toast-message-info {
+            background: #ff0000c7;
+            border: none;
+            color: #ffffff;
+            font-weight: 700;
+            border-width: 0;
+            .p-toast-icon-close {
+                color: #ffffff;
+                font-weight: 500;
+            }
+        }
+        &.p-toast-message-info {
+            background: #f8f9fa;
+            color: #000;
+            .p-toast-icon-close {
+                color: #6c757d;
+            }
+        }
+        .p-toast-message-content {
+            padding: 0.5rem;
+            font-size: 12px;
+            .p-toast-message-icon {
+                font-size: 0;
+            }
+        }
+    }
+}

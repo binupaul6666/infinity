@@ -1,4 +1,5 @@
 <section class="login-wrapper">
+  <Toast position="top-right" />
   <div class="logo">
     <span>Infinity</span>
   </div>
@@ -8,11 +9,11 @@
         <TabView @tab-click="tabClick($event)" v-model:activeIndex="activeIndex">
           <TabPanel header="SIGN IN">
             <span class="p-float-label">
-              <InputText id="username" type="text" v-model="username" />
+              <InputText id="username" type="text" v-model="username" maxlength="16"/>
               <label for="username">Username<sup class="red">*</sup></label>
             </span>
             <span class="p-float-label">
-              <InputText id="password" type="password" v-model="password" />
+              <InputText id="password" type="password" v-model="password" maxlength="20"/>
               <label for="password">Password<sup class="red">*</sup></label>
             </span>
             <div class="checkbox">
@@ -24,7 +25,7 @@
           </TabPanel>
           <TabPanel header="SIGN UP">
             <span class="p-float-label">
-              <InputText id="username" type="text" v-model="newusername" />
+              <InputText id="newusername" type="text" v-model="newusername" maxlength="16"/>
               <label for="username">Username<sup class="red">*</sup></label>
             </span>
             <span class="p-float-label">
@@ -32,12 +33,12 @@
               <label for="fullname">Full Name<sup class="red">*</sup></label>
             </span>
             <span class="p-float-label">
-              <InputText id="password" type="password" v-model="newpassword" />
+              <InputText id="newpassword" type="password" v-model="newpassword" maxlength="20"/>
               <label for="password">Password<sup class="red">*</sup></label>
               <span class="password-instruction" @click="messageShow()">?</span>
             </span>
             <span class="p-float-label">
-              <InputText id="repeatpassword" type="password" v-model="newrepeatpsw" />
+              <InputText id="newrepeatpsw" type="password" v-model="newrepeatpsw" maxlength="20"/>
               <label for="repeatpassword">Repeat Password<sup class="red">*</sup></label>
             </span>
             <span class="p-float-label">
@@ -48,7 +49,7 @@
         </TabView>
       </div>
       <div class="submit">
-        <button type="button" class="btn btn-primary">{{loginButton}}</button>
+        <button type="button" class="btn btn-primary" @click="submitDetails()">{{loginButton}}</button>
       </div>
       <div class="mt-2 forget-psw" @click='changeScreen()'>
         <span>{{loginQue}}?</span>
