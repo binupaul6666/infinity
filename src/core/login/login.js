@@ -30,8 +30,7 @@ export default {
   computed: {
 
   },
-  mounted() {
-    fetchResponse('get', 'authentication').then(_ => console.log(_, 'value'));
+  mounted() {    
     // console.log(value, 'aaaaaaa')
   },
   methods: {
@@ -72,12 +71,27 @@ export default {
               const pswTest = password(this.newpassword)
               if (!pswTest) {
                 this.emitter.emit('error', 'Please check your paswword format');
-              } else if(!emailTest) {
+                return;
+              } else if (!emailTest) {
                 this.emitter.emit('info', 'Please check your Email format');
+                return;
               }
+              const userObj = {
+                username: this.newusername,
+                fullname: this.newfullname,
+                password: this.newpassword,
+                email: this.email
+              }
+              fetchResponse('post', 'authentication', userObj).then(value => console.log(value.data, 'value'));
             }
           } else {
-            this.emitter.emit('info', '*Mandatoray Fields are empty');
+            const formField = [this.newusername, this.newfullname, this.newpassword, this.newrepeatpsw, this.email];
+            for (const [_, $] of formField.entries()) {
+              if ($ === '') {
+                this.emitter.emit('info', `Field ${_ + 1}, *Mandatoray Field is empty`);
+                break;
+              }
+            }
           }
           break;
       }
