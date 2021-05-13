@@ -5,7 +5,7 @@ import axios from 'axios';
  * @description Remot call
  */
 
-const localUrl = 'http://localhost:5000/';
+const localUrl = 'http://localhost:7000/';
 const config = {
     headers: { 'content-type': 'application/json' },
 }

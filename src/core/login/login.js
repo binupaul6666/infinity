@@ -30,7 +30,7 @@ export default {
   computed: {
 
   },
-  mounted() {    
+  mounted() {
     // console.log(value, 'aaaaaaa')
   },
   methods: {
@@ -59,9 +59,20 @@ export default {
     },
     submitDetails() {
       switch (this.activeIndex) {
-        case 0:
-          console.log('working');
-          break
+        case 0: {
+          const existUser = {
+            username: this.username,
+            password: this.password
+          }
+          fetchResponse('post', 'authentication/signin', existUser).then($ => {
+            if ($.data.status) {
+              // action will do in the future
+            } else {
+              this.emitter.emit('error', $.data.message);
+            }
+          });
+          break;
+        }
         case 1:
           if (this.newusername !== '' && this.newfullname !== '' && this.newpassword !== '' && this.newrepeatpsw !== '' && this.email !== '') {
             if (this.newpassword !== this.newrepeatpsw) {
@@ -70,7 +81,7 @@ export default {
               const emailTest = email(this.email);
               const pswTest = password(this.newpassword)
               if (!pswTest) {
-                this.emitter.emit('error', 'Please check your paswword format');
+                this.emitter.emit('error', 'Please check your password format');
                 return;
               } else if (!emailTest) {
                 this.emitter.emit('info', 'Please check your Email format');
