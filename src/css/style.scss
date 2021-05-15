@@ -1,6 +1,8 @@
+@import "_variable";
 @import url("commonPrime.scss");
 @import url("mixins.scss");
 @import url("prime.scss");
+
 
 html {
     height: 100%;
@@ -9,10 +11,10 @@ html {
 body {
     padding: 0;
     margin: 0;
-    font-size: 1rem;
-    font-family: Avenir, Helvetica, Arial, sans-serif !important;
-    color: #000000;
-    background-color: #ffffff;
+    font-size: $infinityFondSize;
+    font-family: $infinityFond;
+    color: $infinityColor;
+    background-color: $infinityBgColor;
     height: 100%;
 }
 
@@ -33,7 +35,7 @@ ol {
 }
 
 .red {
-    color: red;
+    color: $red;
 }
 
 .btn {
@@ -41,7 +43,7 @@ ol {
     border-radius: 0;
 
     &.btn-primary {
-        background: #1161ee;
+        background: $skyblue;
 
         &:focus {
             box-shadow: none;

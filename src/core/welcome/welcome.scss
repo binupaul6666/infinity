@@ -1,0 +1,17 @@
+@import "/src/css/variable";
+.welcome {
+    .email-confirm {
+        width: 70%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 2%;
+        background: $skyblue;
+        font-size: 2em;
+        font-weight: 700;
+    }
+    a {
+        color: $grey;
+        font-weight: 700;    
+        font-style: oblique;
+    }
+}
