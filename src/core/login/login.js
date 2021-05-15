@@ -93,7 +93,13 @@ export default {
                 password: this.newpassword,
                 email: this.email
               }
-              fetchResponse('post', 'authentication', userObj).then(value => console.log(value.data, 'value'));
+              fetchResponse('post', 'authentication', userObj).then($ => {
+                if ($.data.status) {
+                  this.emitter.emit('success', $.data.message);
+                } else {
+                  this.emitter.emit('error', $.data.message);
+                }
+              });
             }
           } else {
             const formField = [this.newusername, this.newfullname, this.newpassword, this.newrepeatpsw, this.email];

@@ -33,6 +33,14 @@ export default {
         life: 3000,
       });
     });
+    this.emitter.on("success", (successMsg) => {
+      this.$toast.add({
+        severity: "success",
+        summary: "Success Message",
+        detail: successMsg,
+        life: 10000,
+      });
+    });
   },
 };
 </script>

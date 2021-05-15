@@ -5,7 +5,8 @@
         box-shadow: none;
         border-radius: 0;
         &.p-toast-message-error,
-        &.p-toast-message-info {
+        &.p-toast-message-info,
+        &.p-toast-message-success {
             background: #ff0000c7;
             border: none;
             color: #ffffff;
@@ -21,6 +22,13 @@
             color: #000;
             .p-toast-icon-close {
                 color: #6c757d;
+            }
+        }
+        &.p-toast-message-success {
+            background: #07711f;
+            color: #ffffff;
+            .p-toast-icon-close {
+                color: #ffffff;
             }
         }
         .p-toast-message-content {
