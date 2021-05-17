@@ -1,10 +1,18 @@
-<section class="welcome">
+<section class="welcome">  
   <div class="container-fluid">
-    <div class="email-confirm mt-4">
-      Account Confirmed!
-    </div>
-    <div class="mt-3">
-      <a href="http://localhost:8080/login">Please login</a>
-    </div>
+    <template v-if="confirmEmail">
+      <div class="email-confirm mt-4">
+        Account Confirmed!        
+      </div>
+      <div class="mt-3">
+        <a href="http://localhost:8080/login">Please login</a>
+      </div>
+    </template>
+    <template v-else>
+      <div class="email-confirm mt-4">
+        Please confirm again!!!
+        <font-awesome-icon icon="star" class="blob" v-for="i in num_pis"/>
+      </div>
+    </template>
   </div>
 </section>
