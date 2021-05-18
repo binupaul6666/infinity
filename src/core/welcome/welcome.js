@@ -8,14 +8,16 @@ export default {
   data() {
     return {
       confirmEmail: false,
-      num_pis: 0
+      num_pis: 0,
+      textShow: false,
     }
   },
   computed: {
 
   },
-  created() {
-    this.num_pis = 100;
+  created() { },
+  mounted() {
+
     if (this.$route.query.mailId !== null && this.$route.query.mailId !== undefined && this.$route.query.mailId !== '') {
       const userId = {
         userId: this.$route.query.mailId
@@ -23,29 +25,30 @@ export default {
       fetchResponse('put', 'authentication/confirm', userId).then($ => {
         if ($.data.status) {
           this.confirmEmail = true;
+          this.num_pis = 100;
+          setTimeout(() => {
+            this.animateBlobs();
+            this.textShow = true;
+          }, 0)
         } else {
           this.confirmEmail = false;
+          this.textShow = false;
           this.emitter.emit('error', $.data.message);
         }
       });
     }
-
-  },
-  mounted() {
-    this.num_pis = 100;
-    this.animateBlobs();
   },
   methods: {
     animateBlobs() {
-      let xSeed = _.random(350, 380);
-      let ySeed = _.random(120, 170);
+      let xSeed = _.random(350, 450);
+      let ySeed = _.random(120, 250);
       let collections = document.getElementsByClassName('blob');
       for (let i = 0; i < collections.length; i++) {
         let $blob = collections[i];
-        let speed = _.random(1, 10);
+        let speed = _.random(1, 8);
         let rotation = _.random(5, 100);
         let scale = _.random(0.8, 1.5);
-        let x =  _.random(-xSeed, xSeed);
+        let x = _.random(-xSeed, xSeed);
         let y = _.random(-ySeed, ySeed);
 
         animate.to($blob, {

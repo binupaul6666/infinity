@@ -1,28 +1,27 @@
 @import "/src/css/variable";
+* {
+    height: auto;
+}
 .welcome {
     .email-confirm {
-        width: 70%;
-        margin: 0 auto;
-        text-align: center;
-        padding: 2%;
-        background: $skyblue;
+        display: flex;
+        justify-content: center;
         font-size: 2em;
         font-weight: 700;
     }
     a {
         color: $grey;
-        font-weight: 700;    
+        font-weight: 700;
         font-style: oblique;
     }
 }
 .blob {
-  height: 50px;
-  width: 50px;
-  color: $infinityColor;
-  position: absolute;
-  top: 45%;
-  left: 45%;
-  z-index: 1;
-  font-size: 30px;
-   
+    height: 50px;
+    width: 50px;
+    color: $midgreen;
+    position: absolute;
+    top: 20%;
+    left: 45%;
+    z-index: 1;
+    font-size: 30px;
 }

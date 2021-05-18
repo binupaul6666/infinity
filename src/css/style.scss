@@ -16,6 +16,7 @@ body {
     color: $infinityColor;
     background-color: $infinityBgColor;
     height: 100%;
+    overflow: hidden;
 }
 
 :focus {

@@ -19,7 +19,7 @@ async function fetchResponse(method, url, requestObjcet = null) {
 
         case 'post':
             return await axios
-                .post(localUrl + url, convertObject , config)
+                .post(localUrl + url, convertObject, config)
         case 'put':
             return await axios
                 .put(localUrl + url, convertObject, config)
