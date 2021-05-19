@@ -6,6 +6,7 @@ import Checkbox from 'primevue/checkbox';
 import Message from 'primevue/message';
 import fetchResponse from '/src/services/appServices';
 import { email, password } from '/src/validations/validation';
+import store from '@/store'
 
 export default {
   name: 'login',
@@ -24,14 +25,14 @@ export default {
       newfullname: '',
       newpassword: '',
       newrepeatpsw: '',
-      email: '',
+      email: '',      
     }
   },
   computed: {
 
   },
   mounted() {
-    // console.log(value, 'aaaaaaa')
+    
   },
   methods: {
     messageShow() {
@@ -66,7 +67,7 @@ export default {
           }
           fetchResponse('post', 'authentication/signin', existUser).then($ => {
             if ($.data.status) {
-              // action will do in the future
+              store.isAuthenticated = $.data.status;
             } else {
               this.emitter.emit('error', $.data.message);
             }
