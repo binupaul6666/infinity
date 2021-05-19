@@ -13,7 +13,7 @@ const routes = [{
     name: 'welcome',
     component: Welcome,
 }, {
-    path: "/layout",
+    path: "/",
     name: 'layout',
     component: () => import(/* webpackPrefetch: true */
         /* webpackPreload: true */ /* webpackChunkName: 'layout' */ '../components/layout/index'),
