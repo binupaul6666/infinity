@@ -41,12 +41,19 @@ export default {
     axios.interceptors.request.use((req) => {
       this.isLoading = true;
       return req;
+    }, ()=> {
+      this.isLoading = false;
     });
 
-    axios.interceptors.response.use((res) => {
-      this.isLoading = false;
-      return res;
-    });
+    axios.interceptors.response.use(
+      (res) => {
+        this.isLoading = false;
+        return res;
+      },
+      () => {
+        this.isLoading = false;
+      }
+    );
   },
   mounted() {
     this.emitter.on("error", (errMsg) => {

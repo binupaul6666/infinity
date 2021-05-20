@@ -1,7 +1,7 @@
-
+import Header from '/src/sharedcomponents/header/index'
 export default {
   name: 'layout',
-  components: {},
+  components: {Header},
   props: [],
   data () {
     return {

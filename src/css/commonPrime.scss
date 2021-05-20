@@ -1,3 +1,4 @@
+@import "_variable";
 .p-toast {
     width: auto;
     .p-toast-message {
@@ -37,6 +38,28 @@
             .p-toast-message-icon {
                 font-size: 0;
             }
+        }
+    }
+}
+
+.p-menubar {
+    background: $skyblue;
+    color: $infinityColor;
+    border-radius: 0;
+    border: 1px solid $lightdark;
+    .p-menuitem-link {
+        color: #ffffff !important;
+        .p-menuitem-icon {
+            color: #ffffff !important;
+            font-weight: 700;
+        }
+        .p-menuitem-text {
+            color: #ffffff !important;
+            font-weight: 700;
+        }
+        .p-submenu-icon {
+            color: #ffffff !important;
+            font-weight: 700;
         }
     }
 }

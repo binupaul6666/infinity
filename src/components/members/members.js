@@ -3,7 +3,7 @@ export default {
   name: 'members',
   components: {},
   props: [],
-  data () {
+  data() {
     return {
 
     }
@@ -11,7 +11,7 @@ export default {
   computed: {
 
   },
-  mounted () {
+  mounted() {
 
   },
   methods: {
