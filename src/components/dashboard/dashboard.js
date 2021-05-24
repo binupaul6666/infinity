@@ -1,6 +1,6 @@
 
 export default {
-  name: 'layout',
+  name: 'dashboard',
   components: {},
   props: [],
   data () {

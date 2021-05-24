@@ -31,6 +31,12 @@ const routes = [{
             name: 'member',
             component: () => import(/* webpackPrefetch: true */
                     /* webpackPreload: true */ /* webpackChunkName: 'member' */ '../components/members/index'),
+        },
+        {
+            path: "/dashboard",
+            name: 'dashboard',
+            component: () => import(/* webpackPrefetch: true */
+                /* webpackPreload: true */ /* webpackChunkName: 'dashboard' */ '../components/dashboard/index')
         }
     ]
 }
