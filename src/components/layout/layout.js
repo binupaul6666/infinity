@@ -1,9 +1,9 @@
-
+import Header from '/src/shared/header/index'
 export default {
   name: 'layout',
-  components: {},
+  components: { Header },
   props: [],
-  data () {
+  data() {
     return {
 
     }
@@ -11,7 +11,7 @@ export default {
   computed: {
 
   },
-  mounted () {
+  mounted() {
 
   },
   methods: {

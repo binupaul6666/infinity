@@ -1,0 +1,66 @@
+@import "/src/css/variable";
+.header {
+    background-color: $skyblue;
+    .logo {
+        display: flex;
+        align-items: center;
+        img {
+            width: 19%;
+            max-width: 19%;
+        }
+    }
+    .header-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-style: oblique;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logout {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: end;
+        color: $grey;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        .logout-icon {
+            transition: transform 0.2s;
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+    .go-back {
+        font-weight: 700;
+        text-align: end;
+        a {
+            color: $fadewhite;
+            font-weight: 700;
+            font-style: italic;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    img {
+       width:64px !important;
+       max-width: 65px !important;
+    }
+    .header-name {
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    img {
+        width: 75px !important;
+        max-width: 75px !important;
+    }
+}

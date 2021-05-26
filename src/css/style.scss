@@ -59,7 +59,10 @@ ol {
 }
 
 .container-fluid {
-    padding: 16px;
+    padding: {
+        top: 16px;
+        bottom: 16px;
+    }
 }
 
 a {
@@ -69,5 +72,14 @@ a {
     &:hover {
         text-decoration: none;
         color: $midblue;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: {
+            top: 10px;
+            bottom: 10px;
+        }
     }
 }

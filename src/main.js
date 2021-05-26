@@ -5,6 +5,7 @@ import PrimeVue from 'primevue/config';
 import mitt from 'mitt';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import ToastService from 'primevue/toastservice';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,7 +14,7 @@ import 'primevue/resources/primevue.min.css';
 import 'primeicons/primeicons.css';
 import '@/css/style.scss';
 
-library.add(faStar);
+library.add(faStar,faSignOutAlt);
 
 const emitter = mitt();
 const app = createApp(App);
