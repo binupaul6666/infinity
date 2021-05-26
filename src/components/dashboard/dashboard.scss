@@ -1,3 +1,30 @@
+@import "/src/css/variable";
 .dashboard {
+    display: flex;
+    .card {
+        transition: transform 0.4s;
+        img {
+            height: 200px;
+        }
+        &:hover {
+            transform: scale(1.05);
+        }
+        .card-body {
+            background-color: $grey;
+            text-align: center;
+            a {
+                font-size: 16px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
 
+@media only screen and (max-width: 992px) {
+    .card-body {
+        text-align: left !important;
+    }
+    .smallscreen {
+        margin-top: 1rem;
+    }
 }

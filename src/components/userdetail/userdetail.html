@@ -1,0 +1,18 @@
+<section class="userdetail">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-sm-12 cold-md-4 col-lg-3">
+        <span class="p-float-label">
+          <InputText id="username" type="text" v-model="fullname" />
+          <label for="username">Full Name</label>
+        </span>
+      </div>
+      <div class="col-12 col-sm-12 cold-md-4 col-lg-3">
+        <span class="p-float-label">
+          <Dropdown id="blood" v-model="bloodgroup" :options="bloodtype" optionLabel="name" editable=true loading=true />
+          <label for="blood">Blood Group</label>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

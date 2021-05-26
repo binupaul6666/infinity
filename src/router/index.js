@@ -13,6 +13,20 @@ const routes = [{
     name: 'welcome',
     component: Welcome,
 }, {
+    path: "/dashboard",
+    name: 'dashboard',
+    component: () => import(/* webpackPrefetch: true */
+        /* webpackPreload: true */ /* webpackChunkName: 'dashboard' */ '../components/dashboard/index'),
+    beforeEnter: (to, from, next) => {
+        if (to.name !== 'login' && store.isAuthenticated) {
+            next()
+        } else {
+            next({ path: '/login' })
+        }
+
+    }
+},
+{
     path: "/",
     name: 'layout',
     component: () => import(/* webpackPrefetch: true */
@@ -33,10 +47,10 @@ const routes = [{
                     /* webpackPreload: true */ /* webpackChunkName: 'member' */ '../components/members/index'),
         },
         {
-            path: "/dashboard",
-            name: 'dashboard',
+            path: "/user",
+            name: 'user',
             component: () => import(/* webpackPrefetch: true */
-                /* webpackPreload: true */ /* webpackChunkName: 'dashboard' */ '../components/dashboard/index')
+                /* webpackPreload: true */ /* webpackChunkName: 'dashboard' */ '../components/userdetail/index')
         }
     ]
 }

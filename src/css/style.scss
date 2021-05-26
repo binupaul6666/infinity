@@ -3,7 +3,6 @@
 @import url("mixins.scss");
 @import url("prime.scss");
 
-
 html {
     height: 100%;
 }
@@ -16,7 +15,7 @@ body {
     color: $infinityColor;
     background-color: $infinityBgColor;
     height: 100%;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 :focus {
@@ -57,4 +56,18 @@ ol {
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled):active:focus {
     box-shadow: none;
+}
+
+.container-fluid {
+    padding: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: $midblue;
+    font-weight: 700;
+    &:hover {
+        text-decoration: none;
+        color: $midblue;
+    }
 }
