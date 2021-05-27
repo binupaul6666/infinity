@@ -1,12 +1,15 @@
 @import "/src/css/variable";
 .header {
     background-color: $skyblue;
+    background-image: linear-gradient(95deg, $bluedark 0%, $skyblue 50%);
+    position: fixed;
+    width: 100%;
     .logo {
         display: flex;
         align-items: center;
         img {
-            width: 19%;
-            max-width: 19%;
+            width: 100%;
+            max-width: 60px;
         }
     }
     .header-name {
@@ -18,40 +21,36 @@
         justify-content: center;
         align-items: center;
     }
-    .logout {
-        font-size: 2rem;
-        font-weight: 700;
-        text-align: end;
-        color: $grey;
+    .header-img-user {
         display: flex;
-        justify-content: flex-end;
-        align-items: flex-start;
-        .logout-icon {
+        justify-content: center;
+        align-items: center;
+        .rounded-img {
+            border-radius: 50%;
+            width: 30px !important;
+            height: 30px;
+        }
+    }    
+    .common-icon-style {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-align: end;               
+        .font-icon-style {
             transition: transform 0.2s;
             cursor: pointer;
+            color: $grey; 
             &:hover {
                 transform: scale(1.1);
             }
         }
     }
-    .go-back {
-        font-weight: 700;
-        text-align: end;
-        a {
-            color: $fadewhite;
-            font-weight: 700;
-            font-style: italic;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
+    
 }
 
 @media (max-width: 767px) {
     img {
-       width:64px !important;
-       max-width: 65px !important;
+        width: 100% !important;
+        max-width: 65px !important;
     }
     .header-name {
         display: none !important;
@@ -60,7 +59,7 @@
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
     img {
-        width: 75px !important;
+        width: 100% !important;
         max-width: 75px !important;
     }
 }

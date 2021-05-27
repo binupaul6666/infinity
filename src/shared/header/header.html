@@ -1,18 +1,32 @@
 <header class="header">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-6 col-md-3 logo">
+      <div class="col-4 col-md-2 logo">
         <img class="img" src="@/assets/images/brand.png" alt="Brand Logo" />
       </div>
-      <div class="col-6 col-md-6 header-name">
+      <div class="col-4 col-md-6 header-name">
         <strong>Royals Pallipadi Arts & Sports Club</strong>
       </div>
-      <div class="col-6 col-md-3">
-        <div class="logout">
-          <font-awesome-icon icon="sign-out-alt" class="logout-icon" />
+      <div class="col-4 col-md-2 header-img-user">
+        <img class="rounded-img" src="@/assets/images/brand.png" alt="User Image">
+        <span class="ml-3 font-weight-bold font-italic">Welcome Binu</span>
+      </div>
+      <div class="col-2 col-md-1">
+        <div class="common-icon-style">
+          <font-awesome-icon icon="question-circle" class="font-icon-style" />
         </div>
-        <div class="go-back">
-          <router-link to="/dashboard">Go Back to Dashboard</router-link>
+        <div class="common-icon-style">
+          <font-awesome-icon icon="mail-bulk" class="font-icon-style" />
+        </div>
+      </div>
+      <div class="col-2 col-md-1">
+        <div class="common-icon-style">
+          <font-awesome-icon icon="sign-out-alt" class="font-icon-style" />
+        </div>
+        <div class="common-icon-style">
+          <router-link to="/dashboard">
+            <font-awesome-icon icon="home" class="font-icon-style" />
+          </router-link>
         </div>
       </div>
     </div>
